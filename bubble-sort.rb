@@ -14,10 +14,7 @@ def bubble_sort(array)
       end
      break if array == sorted_array 
  end
-
-  puts "Array: #{array}"
-  
-  return array
+ return array
 end
 
 #  =====================
@@ -29,7 +26,7 @@ end
 #     switched = false
 
 #     for i in 0...arr
-#       if arr[i] > arr[i+1]
+#       if arr[i].length > arr[i+1].length
 #         n = arr[i]
 #         arr[i] = arr[i+1]
 #         arr[i + 1] = n
