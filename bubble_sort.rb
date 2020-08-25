@@ -13,11 +13,11 @@ def bubble_sort(array)
       n_two = array[i + 1]
 
       if n_one > n_two
-        # if the first number is greater than the one after, swap. 
+        # if the first number is greater than the one after, swap.
         array[i], array[i + 1] = array[i + 1], array[i]
         # swap becomes true when a swap has happened
         swap = true
-      else 
+      else
         next
       end
     end
