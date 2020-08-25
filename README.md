@@ -1,4 +1,4 @@
-# Project Name
+# Project 9 - Advanced Building Blocks - Bubble Sort
 ![Microverse](https://img.shields.io/badge/-Microverse-6F23FF?style=for-the-badge)
 ## Library Directory
  
