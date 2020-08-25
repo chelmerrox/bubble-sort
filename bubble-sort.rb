@@ -1,77 +1,54 @@
-# def bubble_sort(array)
+def bubble_sort(array)
+# prints the initial unsorted array  
+  puts "Un-sorted array: #{array}"  
+    arr = array.length - 1
+    loop do 
+# created a boolean variable, default is false.      
+      swap = false
+# loop through the array      
+      (0...arr).each do |i|
+# created two variables for the first number and the one after as 'i'
+# so it keeps checking every number next to eachother.        
+        n_one = array[i]
+        n_two = array[i + 1]
+# if the first number is greater than the one after, swap.        
+      if n_one > n_two
+        array[i], array[i + 1] = array[i + 1], array[i]
+# swap becomes true when a swap has happened        
+        swap = true
+      end
+    end
+# the loop breaks when no swap has happened    
+      break if swap == false
+    end
+    puts "Sorted array: #{array}"
+    end
 
-# sorted_array = array.sort
-
-#    loop do
-#      for i in 0..array.length - 1
-#         value = array[i] <=> array[i + 1]
-
-#         if value == 1  
-#           array[i], array[i + 1] = array[i + 1], array[i]
-#         else
-#           next
-#         end
-#       end
-#      break if array == sorted_array 
-#  end
-#   return array
-# end
-
-# Solution #2
-# ===========
-
-# arr = array.length - 1
-
-#   loop do
-
-#     switched = false
-
-#     for i in 0...arr
-#       if arr[i].length > arr[i+1].length
-#         n = arr[i]
-#         arr[i] = arr[i+1]
-#         arr[i + 1] = n
-#         switched = true
-#     end
-#     while switched == true
-#   end
-# return arr
-# end
-# end
-# end
-
-# p bubble_sort([100,100,30,2,9,5,1,-1,0,-190])
+p bubble_sort([100,100,30,2,9,5,1,-1,0,-190])
 
 # ==============================
 #        bubble_sort_by
 # ==============================
 
 def bubble_sort_by(array)
-#   yield
-# end
- 
-# bubble_sort_by.each do |left, right|
-#   value = left <=> right
- 
-#   if value == 1  
-#     left, right = right, left
-#   end
-# end
-
-  sorted_array = array.sort
-
-   loop do
-     for i in 0..array.length - 1
-        value = array[i] <=> array[i + 1]
-        switch = array[i], array[i + 1] = array[i + 1], array[i]
-        yield switch 
-        if value.positive?()
-     end
-    break if array == sorted_array 
+  puts "Un-sorted array: #{array}"
+  arr = array.length - 1
+  
+  loop do 
+    swap = false
+    (0...arr).each do |i|
+      n_one = array[i]
+      n_two = array[i + 1]
+    if yield(n_one, n_two).positive?
+      array[i], array[i + 1] = array[i + 1], array[i]
+      swap = true
+    end
   end
- end
-print array
-
-p bubble_sort_by([100,100,30,2,9,5,1,-1,0,-190]){ |left, right|
-    left.length - right.length}
-end
+    break if swap == false
+  end  
+  puts "Sorted array: #{array}"
+  end
+  
+  bubble_sort_by(["hi", "hello", "hey"]) do |left, right|
+    left.length - right.length
+  end
