@@ -16,13 +16,15 @@ def bubble_sort(array)
         array[i], array[i + 1] = array[i + 1], array[i]
         # swap becomes true when a swap has happened
         swap = true
+      else
+        next
       end
     end
     # the loop breaks when no swap has happened
     break if swap == false
   end
   puts "Sorted array: #{array}"
-    end
+end
 
 p bubble_sort([100, 100, 30, 2, 9, 5, 1, -1, 0, -190])
 
@@ -47,8 +49,8 @@ def bubble_sort_by(array)
     break if swap == false
   end
   puts "Sorted array: #{array}"
-  end
+end
 
-bubble_sort_by(["hi", "hello", "hey"]) do |left, right|
+bubble_sort_by(%w(hi hello hey)) do |left, right|
   left.length - right.length
 end
