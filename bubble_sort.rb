@@ -22,7 +22,7 @@ def bubble_sort(array)
       end
     end
     # the loop breaks when no swap has happened
-  break unless swap
+    break unless swap
   end
   puts "Sorted array: #{array}"
   array
@@ -48,7 +48,7 @@ def bubble_sort_by(array)
         swap = true
       end
     end
-  break unless swap
+    break unless swap
   end
   puts "Sorted array: #{array}"
 end
