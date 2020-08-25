@@ -11,19 +11,19 @@ def bubble_sort(array)
       # so it keeps checking every number next to eachother.
       n_one = array[i]
       n_two = array[i + 1]
+
       # if the first number is greater than the one after, swap.
       if n_one > n_two
         array[i], array[i + 1] = array[i + 1], array[i]
         # swap becomes true when a swap has happened
         swap = true
-      else
-        next
       end
     end
     # the loop breaks when no swap has happened
-    break if swap == false
+    break unless swap == false
   end
   puts "Sorted array: #{array}"
+  array
 end
 
 p bubble_sort([100, 100, 30, 2, 9, 5, 1, -1, 0, -190])
@@ -51,6 +51,6 @@ def bubble_sort_by(array)
   puts "Sorted array: #{array}"
 end
 
-bubble_sort_by(%w(hi hello hey)) do |left, right|
+bubble_sort_by(%w[hi hello hey]) do |left, right|
   left.length - right.length
 end
