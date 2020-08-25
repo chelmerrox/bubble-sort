@@ -17,15 +17,14 @@ def bubble_sort(array)
         array[i], array[i + 1] = array[i + 1], array[i]
         # swap becomes true when a swap has happened
         swap = true
-      else
-        next
       end
+      next unless
+        n_two > n_one
     end
     # the loop breaks when no swap has happened
-    break unless swap
+    break if swap == false
   end
-  puts "Sorted array: #{array}"
-  array
+  "Sorted array: #{array}"
 end
 
 p bubble_sort([100, 100, 30, 2, 9, 5, 1, -1, 0, -190])
@@ -48,7 +47,7 @@ def bubble_sort_by(array)
         swap = true
       end
     end
-    break unless swap
+    break if swap == false
   end
   puts "Sorted array: #{array}"
 end
