@@ -55,7 +55,7 @@ Click 'Run' on repl.it
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](enter issues url here).
+Feel free to check the [issues page](https://github.com/chelmerrox/bubble-sort/issues).
 
 ### Show your support
 
