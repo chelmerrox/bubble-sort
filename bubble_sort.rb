@@ -1,6 +1,4 @@
 def bubble_sort(array)
-  # prints the initial unsorted array
-  puts "Un-sorted array: #{array}"
   arr = array.length - 1
   loop do
     # created a boolean variable, default is false.
@@ -24,7 +22,7 @@ def bubble_sort(array)
     # the loop breaks when no swap has happened
     break if swap == false
   end
-  "Sorted array: #{array}"
+  array
 end
 
 p bubble_sort([100, 100, 30, 2, 9, 5, 1, -1, 0, -190])
@@ -34,9 +32,7 @@ p bubble_sort([100, 100, 30, 2, 9, 5, 1, -1, 0, -190])
 # ==============================
 
 def bubble_sort_by(array)
-  puts "Un-sorted array: #{array}"
   arr = array.length - 1
-
   loop do
     swap = false
     (0...arr).each do |i|
@@ -49,9 +45,7 @@ def bubble_sort_by(array)
     end
     break if swap == false
   end
-  puts "Sorted array: #{array}"
+  array
 end
 
-bubble_sort_by(%w[hi hello hey]) do |left, right|
-  left.length - right.length
-end
+p bubble_sort_by(%w[hi hello hey]) { |left, right| left.length - right.length }
